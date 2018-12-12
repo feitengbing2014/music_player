@@ -1,0 +1,10 @@
+//加入所依赖的第三方库版本号的控制，以便以后的统一管理
+ext {
+    //编译版本号
+    buildVersion = [
+            compileSdkVersion: 27,
+            minSdkVersion    : 17,
+            targetSdkVersion : 27,
+            buildToolsVersion: "27.0.3"
+    ]
+}

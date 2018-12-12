@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="music_40">19dip</dimen>
+    <dimen name="music_28">12dip</dimen>
+    <dimen name="music_24">11dip</dimen>
+    <dimen name="music_14">6dip</dimen>
+    <dimen name="music_20">8dip</dimen>
+    <dimen name="music_12">4dip</dimen>
+    <dimen name="music_76">36dip</dimen>
+    <dimen name="music_290">142dip</dimen>
+    <dimen name="music_114">54dip</dimen>
+    <dimen name="music_399">196dip</dimen>
+    <dimen name="music_166">80dip</dimen>
+    <dimen name="music_64">30dip</dimen>
+    <dimen name="music_32">14dip</dimen>
+    <dimen name="music_22">10dip</dimen>
+    <dimen name="music_121">58dip</dimen>
+</resources>

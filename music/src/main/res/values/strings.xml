@@ -1,0 +1,25 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="music_app_name">Music</string>
+    <string name="next_play">下一首</string>
+    <string name="exit">退出</string>
+
+    <string name="queue_is_empty">播放队列为空</string>
+    <string name="random_play">随机播放</string>
+    <string name="loop_play">列表循环播放</string>
+    <string name="play_one">单曲循环</string>
+
+    <string name="sure_to_delete_music">确定删除歌曲吗</string>
+    <string name="sure">确定</string>
+    <string name="cancel">取消</string>
+    <string name="readbook">去看书</string>
+
+    <string name="shared_to">分享到</string>
+    <string name="sure_to_set_ringtone">确定成设置铃声吗</string>
+    <string name="set_ringtone_successed">设置铃声成功！</string>
+
+    <string name="duration_format" translatable="false"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="durationformatshort" translatable="false"><xliff:g id="format">%2$d:%3$02d</xliff:g></string>
+    <string name="durationformatlong" translatable="false"><xliff:g id="format">%1$d:%2$02d:%3$02d</xliff:g></string>
+
+
+</resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/sleep_bg">
+
+
+    <cn.tony.music.views.SildingFinishLayout
+        android:id="@+id/lock_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/lock_music_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="37dp"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            tools:text="农场上的客人" />
+
+
+        <RelativeLayout
+            android:id="@+id/ctCoaxCoverLayout"
+            android:layout_width="290dp"
+            android:layout_height="290dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:background="@mipmap/sleep_bg_book2">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/ivCoaxCover"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                fresco:actualImageScaleType="focusCrop"
+                fresco:backgroundImage="@android:color/white"
+                fresco:fadeDuration="5000"
+                fresco:failureImageScaleType="centerInside"
+                fresco:placeholderImageScaleType="fitCenter"
+                fresco:progressBarAutoRotateInterval="5000"
+                fresco:progressBarImageScaleType="centerInside"
+                fresco:retryImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/llCOndd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/lock_music_play"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerInParent="true"
+                app:srcCompat="@mipmap/sleep_btn_suspend" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/lock_music_pre"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:layout_toLeftOf="@id/lock_music_play"
+                app:srcCompat="@mipmap/sleep_btn_pre" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/lock_music_next"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@id/lock_music_play"
+                app:srcCompat="@mipmap/sleep_btn_next" />
+        </RelativeLayout>
+
+        <cn.tony.music.views.BillingTextView
+            android:id="@+id/lock_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text=">>> 滑动解锁"
+            android:textColor="@color/white_text"
+            android:textSize="20sp" />
+
+    </cn.tony.music.views.SildingFinishLayout>
+</android.support.constraint.ConstraintLayout>
