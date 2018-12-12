@@ -6,9 +6,9 @@ import android.os.Parcelable;
 
 /**
  * Ella Group
- *
+ * <p>
  * 音乐播放信息
- *
+ * <p>
  * Author by Tony, on 2018/10/25.
  */
 
@@ -30,6 +30,7 @@ public class MusicInfo implements Parcelable {
     public static final String KEY_LRC = "lrc";
     public static final String KEY_ISLOCAL = "islocal";
     public static final String KEY_SORT = "sort";
+    public static final String KEY_LISTEN_CODE = "listenCode";
 
 
     /**
@@ -48,6 +49,7 @@ public class MusicInfo implements Parcelable {
     public String lrc;
     public boolean islocal;
     public String sort;
+    public String listenCode;
 
 
     public int size;
@@ -76,6 +78,7 @@ public class MusicInfo implements Parcelable {
             music.lrc = bundle.getString(KEY_LRC);
             music.islocal = bundle.getBoolean(KEY_ISLOCAL);
             music.sort = bundle.getString(KEY_SORT);
+            music.listenCode = bundle.getString(KEY_LISTEN_CODE);
             return music;
         }
 
@@ -107,6 +110,7 @@ public class MusicInfo implements Parcelable {
         bundle.putString(KEY_LRC, lrc);
         bundle.putBoolean(KEY_ISLOCAL, islocal);
         bundle.putString(KEY_SORT, sort);
+        bundle.putString(KEY_LISTEN_CODE, listenCode);
         dest.writeBundle(bundle);
     }
 
