@@ -66,6 +66,7 @@ public interface IConstants {
     String LRC_UPDATED = "cn.tony.music.updatelrc";
     String UPDATE_LOCKSCREEN = "cn.tony.music.updatelockscreen";
 
+    String NOTIFICATION_VIEW_CLEAR = "cn.tony.music.NOTIFICATION_VIEW_CLEAR";
 
     String CMDNAME = "command";
     String CMDTOGGLEPAUSE = "togglepause";
@@ -96,8 +97,6 @@ public interface IConstants {
     int REPEAT_ALL = 2;//列表循环
     int SHUFFLE_AUTO = 2;
     int REPEAT_NONE = 2;
-
-
 
 
     int IDCOLIDX = 0;

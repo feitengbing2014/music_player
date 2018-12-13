@@ -585,6 +585,9 @@ public class MediaService extends Service {
             return;
         }
 
+        Intent intent = new Intent(IConstants.NOTIFICATION_VIEW_CLEAR);
+        sendBroadcast(intent);
+
         Logger.info(TAG, "Nothing is playing anymore, releasing music_notification");
         cancelNotification();
         mAudioManager.abandonAudioFocus(mAudioFocusListener);
