@@ -302,4 +302,9 @@ public class MediaServiceStub extends MediaAidlInterface.Stub {
     public void cancelTimingImpl() throws RemoteException {
         mService.get().cancelTimingImpl();
     }
+
+    @Override
+    public void setPlaying(boolean isPlaying) {
+        mService.get().setPlaying(isPlaying);
+    }
 }

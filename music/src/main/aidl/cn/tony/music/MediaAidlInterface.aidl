@@ -59,5 +59,6 @@ interface MediaAidlInterface {
       void cancelTiming();
       void timingImpl(int time);
       void cancelTimingImpl();
+      void setPlaying(boolean isPlaying);
 
 }

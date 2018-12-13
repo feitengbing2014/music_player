@@ -123,6 +123,16 @@ public class MusicPlayer {
         context.startService(previous);
     }
 
+
+    public static void setPlaying(boolean isPlaying) {
+        try {
+            if (mService != null) {
+                mService.setPlaying(isPlaying);
+            }
+        } catch (final Exception ignored) {
+        }
+    }
+
     public static void playOrPause() {
         try {
             if (mService != null) {

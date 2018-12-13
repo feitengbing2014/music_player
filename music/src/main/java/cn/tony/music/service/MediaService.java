@@ -854,6 +854,11 @@ public class MediaService extends Service {
         return -1;
     }
 
+
+    public void setPlaying(boolean isPlaying) {
+        this.mIsSupposedToBePlaying = isPlaying;
+    }
+
     public boolean isPlaying() {
         return mIsSupposedToBePlaying;
     }
