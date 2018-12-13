@@ -865,6 +865,18 @@ public class MusicPlayer {
         }
     }
 
+
+    public void setPlayMode(int playMode) {
+        if (mService == null) {
+            return;
+        }
+        try {
+            mService.setPlayMode(playMode);
+        } catch (Exception e) {
+
+        }
+    }
+
     public static final class ServiceBinder implements ServiceConnection {
         private final ServiceConnection mCallback;
         private final Context mContext;

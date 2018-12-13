@@ -307,4 +307,9 @@ public class MediaServiceStub extends MediaAidlInterface.Stub {
     public void setPlaying(boolean isPlaying) {
         mService.get().setPlaying(isPlaying);
     }
+
+    @Override
+    public void setPlayMode(int playMode) {
+        mService.get().setPlayMode(playMode);
+    }
 }

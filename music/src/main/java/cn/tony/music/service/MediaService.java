@@ -2221,7 +2221,12 @@ public class MediaService extends Service {
 
     //播放完当前故事就停止模式
     private boolean isCurrentLoopMode() {
-        Logger.info(TAG, getShuffleMode() + "----isCurrentLoopMode----" + getRepeatMode());
-        return getShuffleMode() == 0 && getRepeatMode() == 1;
+        return this.playMode == 1;
+    }
+
+    private int playMode;
+
+    public void setPlayMode(int playMode) {
+        this.playMode = playMode;
     }
 }
