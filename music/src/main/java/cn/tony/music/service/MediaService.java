@@ -2211,6 +2211,16 @@ public class MediaService extends Service {
      * @return
      */
     public boolean isCountDownState() {
-        return alertTimer != null;
+        //如果是播放完当前故事就停止
+        if (isCurrentLoopMode()) {
+            return alertTimer != null;
+        } else {
+            return false;
+        }
+    }
+
+    //播放完当前故事就停止模式
+    private boolean isCurrentLoopMode() {
+        return MusicPlayer.getShuffleMode() == 0 && MusicPlayer.getRepeatMode() == 1;
     }
 }
