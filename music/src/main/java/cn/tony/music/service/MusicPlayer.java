@@ -866,7 +866,7 @@ public class MusicPlayer {
     }
 
 
-    public void setPlayMode(int playMode) {
+    public static void setPlayMode(int playMode) {
         if (mService == null) {
             return;
         }
