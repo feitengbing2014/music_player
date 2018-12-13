@@ -384,6 +384,8 @@ public class MultiPlayer implements MediaPlayer.OnErrorListener, MediaPlayer.OnC
             mNextMediaPlayer = null;
             mHandler.sendEmptyMessage(IConstants.TRACK_WENT_TO_NEXT);
         } else {
+            if (mService.get().isCountDownState())
+                return;
             mService.get().mWakeLock.acquire(30000);
             mHandler.sendEmptyMessage(IConstants.TRACK_ENDED);
             mHandler.sendEmptyMessage(IConstants.RELEASE_WAKELOCK);

@@ -280,7 +280,7 @@ public class MediaService extends Service {
         mPreferences = getSharedPreferences(IConstants.MEDIASERVICE_PREFERENCES, 0);
         mCardId = getCardId();
 
-        registerExternalStorageListener();
+//        registerExternalStorageListener();
 
 
         // Initialize the intent filter and each action
@@ -324,8 +324,8 @@ public class MediaService extends Service {
         scheduleDelayedShutdown();
 
         reloadQueueAfterPermissionCheck();
-        notifyChange(IConstants.QUEUE_CHANGED);
-        notifyChange(IConstants.META_CHANGED);
+//        notifyChange(IConstants.QUEUE_CHANGED);
+//        notifyChange(IConstants.META_CHANGED);
     }
 
     @Override
@@ -386,7 +386,8 @@ public class MediaService extends Service {
             }
 
             mHistory.clear();
-            openCurrentAndNextPlay(true);
+            openCurrentAndMaybeNext(true, false);
+//            openCurrentAndNextPlay(true);
             if (oldId != getAudioId()) {
                 notifyChange(IConstants.META_CHANGED);
             }
@@ -1055,7 +1056,7 @@ public class MediaService extends Service {
         } else {
             clearPlayInfos();
         }
-        notifyChange(IConstants.MUSIC_CHANGED);
+//        notifyChange(IConstants.MUSIC_CHANGED);
     }
 
 
@@ -1154,7 +1155,7 @@ public class MediaService extends Service {
 
     public void setLockscreenAlbumArt(boolean enabled) {
         mShowAlbumArtOnLockscreen = enabled;
-        notifyChange(IConstants.META_CHANGED);
+//        notifyChange(IConstants.META_CHANGED);
     }
 
 
@@ -1467,9 +1468,9 @@ public class MediaService extends Service {
     }
 
 
-    private void openCurrentAndNextPlay(boolean play) {
-        openCurrentAndMaybeNext(play, true);
-    }
+//    private void openCurrentAndNextPlay(boolean play) {
+//        openCurrentAndMaybeNext(play, true);
+//    }
 
     public void openCurrentAndNext() {
         openCurrentAndMaybeNext(false, true);
@@ -2107,39 +2108,39 @@ public class MediaService extends Service {
         }
     }
 
-    public void registerExternalStorageListener() {
-        if (mUnmountReceiver == null) {
-            mUnmountReceiver = new BroadcastReceiver() {
-
-                @Override
-                public void onReceive(final Context context, final Intent intent) {
-                    final String action = intent.getAction();
-                    if (action.equals(Intent.ACTION_MEDIA_EJECT)) {
-                        saveQueue(true);
-                        mQueueIsSaveable = false;
-                        closeExternalStorageFiles(intent.getData().getPath());
-                    } else if (action.equals(Intent.ACTION_MEDIA_MOUNTED)) {
-                        mMediaMountedCount++;
-                        mCardId = getCardId();
-                        reloadQueueAfterPermissionCheck();
-                        mQueueIsSaveable = true;
-                        notifyChange(IConstants.QUEUE_CHANGED);
-                        notifyChange(IConstants.META_CHANGED);
-                    }
-                }
-            };
-            final IntentFilter filter = new IntentFilter();
-            filter.addAction(Intent.ACTION_MEDIA_EJECT);
-            filter.addAction(Intent.ACTION_MEDIA_MOUNTED);
-            filter.addDataScheme("file");
-            registerReceiver(mUnmountReceiver, filter);
-        }
-    }
+//    public void registerExternalStorageListener() {
+//        if (mUnmountReceiver == null) {
+//            mUnmountReceiver = new BroadcastReceiver() {
+//
+//                @Override
+//                public void onReceive(final Context context, final Intent intent) {
+//                    final String action = intent.getAction();
+//                    if (action.equals(Intent.ACTION_MEDIA_EJECT)) {
+//                        saveQueue(true);
+//                        mQueueIsSaveable = false;
+//                        closeExternalStorageFiles(intent.getData().getPath());
+//                    } else if (action.equals(Intent.ACTION_MEDIA_MOUNTED)) {
+//                        mMediaMountedCount++;
+//                        mCardId = getCardId();
+//                        reloadQueueAfterPermissionCheck();
+//                        mQueueIsSaveable = true;
+//                        notifyChange(IConstants.QUEUE_CHANGED);
+//                        notifyChange(IConstants.META_CHANGED);
+//                    }
+//                }
+//            };
+//            final IntentFilter filter = new IntentFilter();
+//            filter.addAction(Intent.ACTION_MEDIA_EJECT);
+//            filter.addAction(Intent.ACTION_MEDIA_MOUNTED);
+//            filter.addDataScheme("file");
+//            registerReceiver(mUnmountReceiver, filter);
+//        }
+//    }
 
     public void closeExternalStorageFiles(final String storagePath) {
-        stop(true);
-        notifyChange(IConstants.QUEUE_CHANGED);
-        notifyChange(IConstants.META_CHANGED);
+//        stop(true);
+//        notifyChange(IConstants.QUEUE_CHANGED);
+//        notifyChange(IConstants.META_CHANGED);
     }
 
     private void reloadQueueAfterPermissionCheck() {
@@ -2201,5 +2202,15 @@ public class MediaService extends Service {
         }
         Logger.info("VVV", fVolume + "==+==" + volume + "==+==" + currentVolume);
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, volume, AudioManager.FLAG_PLAY_SOUND);
+    }
+
+
+    /**
+     * 是否处于倒计时状态
+     *
+     * @return
+     */
+    public boolean isCountDownState() {
+        return alertTimer != null;
     }
 }
