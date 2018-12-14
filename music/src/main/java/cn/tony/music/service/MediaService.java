@@ -487,6 +487,8 @@ public class MediaService extends Service {
     }
 
     public void play() {
+        if (isLoading)
+            return;
         play(true);
     }
 
@@ -1238,7 +1240,10 @@ public class MediaService extends Service {
     }
 
 
+    private boolean isLoading = false;
+
     public void loading(boolean l) {
+        isLoading = l;
         Intent intent = new Intent(IConstants.MUSIC_LODING);
         intent.putExtra("isloading", l);
         sendBroadcast(intent);
