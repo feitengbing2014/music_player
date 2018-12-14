@@ -487,8 +487,6 @@ public class MediaService extends Service {
     }
 
     public void play() {
-        if (isLoading)
-            return;
         play(true);
     }
 
@@ -1239,11 +1237,8 @@ public class MediaService extends Service {
 //        }
     }
 
-
-    private boolean isLoading = false;
-
     public void loading(boolean l) {
-        isLoading = l;
+        this.isLoading = l;
         Intent intent = new Intent(IConstants.MUSIC_LODING);
         intent.putExtra("isloading", l);
         sendBroadcast(intent);
@@ -2233,5 +2228,12 @@ public class MediaService extends Service {
 
     public void setPlayMode(int playMode) {
         this.playMode = playMode;
+    }
+
+
+    private boolean isLoading = false;
+
+    public boolean isLoading() {
+        return isLoading;
     }
 }

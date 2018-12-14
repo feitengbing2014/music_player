@@ -541,6 +541,19 @@ public class MusicPlayer {
         }
     }
 
+
+    public static boolean isLoading() {
+        if (mService == null) {
+            return true;
+        }
+
+        try {
+            return mService.isLoading();
+        } catch (Exception e) {
+            return true;
+        }
+    }
+
     public static void playNext(Context context, final HashMap<Long, MusicInfo> map, final long[] list) {
         if (mService == null) {
             return;

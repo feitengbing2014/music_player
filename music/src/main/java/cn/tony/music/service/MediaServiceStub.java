@@ -312,4 +312,10 @@ public class MediaServiceStub extends MediaAidlInterface.Stub {
     public void setPlayMode(int playMode) {
         mService.get().setPlayMode(playMode);
     }
+
+
+    @Override
+    public boolean isLoading() {
+        return mService.get().isLoading();
+    }
 }
