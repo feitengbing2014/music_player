@@ -217,7 +217,7 @@ public class MediaService extends Service {
     public void onDestroy() {
         super.onDestroy();
         unregisterReceiver(mIntentReceiver);
-        unregisterReceiver(mUnmountReceiver);
+//        unregisterReceiver(mUnmountReceiver);
     }
 
     @Override
